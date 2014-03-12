@@ -52,6 +52,8 @@ plotKDE<-function(data,title,limits=c(0,3000),breaks=NA,bandwidth=NA,
 	#                "standard" density() function of package stats.
 	
 	# TODO: how to make sure which class gets which colour? Choose order of classes!?
+	#       add handling of length(fcolour)==length(classes) versus length(fcolour)==length(unique(classes))
+	#       how to fix assertain order of classes and colours in latter case?
 	# TODO: Maybe put classes and colour together in one df/key-value list/...
 	# TODO: use HCL colours by default, istead rainbow()
 	# TODO: manual x-breaks?
