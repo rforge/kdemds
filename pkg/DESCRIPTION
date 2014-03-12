@@ -1,0 +1,11 @@
+Package: kdemds
+Type: Package
+Title: Plotting KDEs and MDS maps of geochronology and geochemistry data
+Version: 0.2-3
+Date: 2014-03-10
+Author: Martin Rittner
+Maintainer: Martin Rittner <sw@thegeologician.net>
+Description: This package provides helper functions to facilitate plotting kernel density estimates (KDEs) of geochronological data, and multi-dimensional scaling (MDS) maps of these and other data. Plotting makes heavy use of the package ggplot2, the produced plot objects can be used and modified with ggplot's functions.
+License: GPL (>=2)
+Depends: ggplot2, MASS, scales
+Suggests: RGtk2, tcltk, gdata, gWidgets2, gWidgets2RGtk2, gWidgets2tcltk
