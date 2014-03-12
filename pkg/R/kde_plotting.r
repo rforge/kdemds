@@ -118,7 +118,7 @@ plotKDE<-function(data,title,limits=c(0,3000),breaks=NA,bandwidth=NA,
 	}
 	if(length(data)==0)stop("data column selection yielded no data")
 	
-	breaks<-pretty_breaks()(limits)
+	breaks<-pretty_breaks(...)(limits)
 	labels<-breaks
 	
 	#data transformation in case of logarithmic scale
@@ -126,8 +126,8 @@ plotKDE<-function(data,title,limits=c(0,3000),breaks=NA,bandwidth=NA,
 		for(i in c(1:length(data))){
 			data[[i]]<-log10(data[[i]])
 		}
-		if(any(limits<=0))limits[limits<=0]<-1
-		breaks=log_breaks()(limits)
+		if(any(limits<=0))limits[limits<=0]<-1	#reasonable assumption to use 1 Ma as minimum on logscale(?)
+		breaks=trans_breaks("log10", function(x) 10 ^ x,...)(limits)
 		labels=breaks
 		limits<-log10(limits)
 	}
